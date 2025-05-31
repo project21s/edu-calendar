@@ -1,0 +1,88 @@
+.calendar-buttons-container {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.google-calendar-btn, .yandex-calendar-btn, .outlook-calendar-btn {
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.google-calendar-btn {
+  background: linear-gradient(135deg, #4285f4, #34a853);
+}
+
+.google-calendar-btn:hover {
+  background: linear-gradient(135deg, #3367d6, #2d8f47);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+.yandex-calendar-btn {
+  background: linear-gradient(135deg, #fc3f1d, #ffdb4d);
+}
+
+.yandex-calendar-btn:hover {
+  background: linear-gradient(135deg, #e63519, #f5c842);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+.outlook-calendar-btn {
+  background: linear-gradient(135deg, #0078d4, #106ebe);
+}
+
+.outlook-calendar-btn:hover {
+  background: linear-gradient(135deg, #005a9e, #0c5aa6);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+.google-calendar-btn:active, .yandex-calendar-btn:active, .outlook-calendar-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ics-download-btn {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ics-download-btn:hover {
+  background: linear-gradient(45deg, #45a049, #3d8b40);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.ics-download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ics-download-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}

@@ -1,0 +1,57 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="calendar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5F5F5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="arrow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF5722;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E64A19;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#bg)" filter="url(#shadow)"/>
+  
+  <!-- Calendar Base -->
+  <rect x="24" y="36" width="56" height="48" rx="4" fill="url(#calendar)" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <!-- Calendar Header -->
+  <rect x="24" y="36" width="56" height="12" rx="4" fill="#2196F3"/>
+  
+  <!-- Calendar Rings -->
+  <circle cx="36" cy="32" r="3" fill="#757575"/>
+  <circle cx="68" cy="32" r="3" fill="#757575"/>
+  
+  <!-- Calendar Grid Lines -->
+  <line x1="32" y1="56" x2="72" y2="56" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="32" y1="64" x2="72" y2="64" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="32" y1="72" x2="72" y2="72" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <line x1="40" y1="48" x2="40" y2="80" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="48" y1="48" x2="48" y2="80" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="56" y1="48" x2="56" y2="80" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="64" y1="48" x2="64" y2="80" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <!-- Date Dots -->
+  <circle cx="36" cy="60" r="2" fill="#4CAF50"/>
+  <circle cx="52" cy="68" r="2" fill="#2196F3"/>
+  <circle cx="44" cy="76" r="2" fill="#FF5722"/>
+  
+  <!-- Download Arrow -->
+  <g transform="translate(84, 84)">
+    <circle cx="0" cy="0" r="18" fill="url(#arrow)" filter="url(#shadow)"/>
+    <path d="M-8,-4 L0,8 L8,-4" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="0" y1="-8" x2="0" y2="4" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- ICS Text -->
+  <text x="64" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">.ics</text>
+</svg>
