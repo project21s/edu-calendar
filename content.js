@@ -142,9 +142,12 @@ function createOutlookCalendarUrl(title, datetime, location, description) {
   let startDateTime = '';
   let endDateTime = '';
   
+  console.log(56, datetime);
+
   if (datetime) {
     const dateTimeMatch = datetime.match(/(\d{1,2})\s+(\w+)\s+(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})/);
-    
+    console.log(34, datetime, dateTimeMatch);
+
     if (dateTimeMatch) {
       const [, day, monthName, startTime, endTime] = dateTimeMatch;
       
@@ -169,6 +172,7 @@ function createOutlookCalendarUrl(title, datetime, location, description) {
       // Формат даты для Outlook: ISO 8601
       const dayPadded = day.padStart(2, '0');
       const dateFormatted = `${currentYear}-${month}-${dayPadded}`;
+
       
       startDateTime = `${dateFormatted}T${startTime}:00`;
       endDateTime = `${dateFormatted}T${endTime}:00`;
@@ -230,7 +234,14 @@ function createICSFile(title, datetime, location) {
 
   // Форматируем дату для ICS (UTC)
   const formatICSDate = (date) => {
-    return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    
+    return `${year}${month}${day}T${hours}${minutes}${seconds}`;
   };
 
   const startDateStr = formatICSDate(dates.startDate);
@@ -399,7 +410,7 @@ function addCalendarButtons() {
       return;
     }
     
-    // Ищем нужные элементы внутри этого div
+    // Ищем нужные элементы внутри этого div (События)
     const titleElement = box.querySelector('h3[data-testid="Agenda.ActivityAndExamDrawer.title"]');
     const datetimeElement = box.querySelector('p[data-testid="Agenda.ActivityAndExamDrawer.datetime"]');
     const locationElement = box.querySelector('span[data-testid="Agenda.ActivityAndExamDrawer.location"]');
@@ -431,7 +442,31 @@ function addCalendarButtons() {
         console.log('С описанием:', description.substring(0, 100) + '...');
       }
     }
-  });
+
+    // Ищем нужные элементы внутри этого div (Пир ревью)
+  const peerTitleElement = box.querySelector('h3[data-testid="Agenda.P2PDrawer.ReviewTitle"]');
+  const peerTimeElement = box.querySelector('span[data-testid="Agenda.P2PDrawer.ReviewTime"]');
+  
+  // Если найдены все необходимые элементы
+  if (peerTitleElement && peerTimeElement) {
+    const title = peerTitleElement.textContent.trim();
+
+    // ToDo  так как в функциях отдельные методы парсинга даты и времени из формата события
+    let datetime = peerTimeElement.textContent.trim().replace("2025 at ", "");
+    const splitted = datetime.split(' ');
+
+    const time = splitted[splitted.length - 1];
+
+    datetime = datetime + " - " + time;
+        
+    // Создаем кнопки
+    const buttons = createCalendarButtons(title, datetime, "", "");
+    
+    // Добавляем кнопки в конец div
+    box.appendChild(buttons);    
+    console.log('Добавлена кнопка календаря для:', title);
+  }    
+  });  
 }
 
 // Запускаем поиск при загрузке страницы
