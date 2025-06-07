@@ -10,7 +10,9 @@
 ### 3. Выбрать папку со скаченным репозиторием
 
 ## Загрузка из магазина приложений
-### 1. Перейти по ссылке https://chromewebstore.google.com/detail/edu21-add-to-calendar/behdipecdknahlpldpdignlmlnldnjac
+### 1. Перейти по ссылке:
+Chrome: https://chromewebstore.google.com/detail/edu21-add-to-calendar/behdipecdknahlpldpdignlmlnldnjac
+Mozilla Firefox: https://addons.mozilla.org/ru/firefox/addon/edu-21-add-to-calendar/
 ### 2. Установить
 ### 3. ...
 ### 4. Profit!!!

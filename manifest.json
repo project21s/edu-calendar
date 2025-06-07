@@ -9,5 +9,10 @@
       "js": ["content.js"],
       "css": ["styles.css"]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "edu21calendar@example.com"
+    }
+  }
 }
