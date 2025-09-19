@@ -5,7 +5,7 @@
   "description": "Добавляет кнопки для создания событий в Google, Outlook и для загрузки в формате .ics на сайте учебной платформы школы 21",
   "content_scripts": [
     {
-      "matches": ["https://edu.21-school.ru/*"],
+      "matches": ["https://platform.21-school.ru/*"],
       "js": ["content.js"],
       "css": ["styles.css"]
     }
